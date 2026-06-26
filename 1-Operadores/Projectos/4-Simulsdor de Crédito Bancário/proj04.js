@@ -18,3 +18,8 @@ const temHistoricoNegativo = false;
 const bomHistorico = !temHistoricoNegativo; 
 const perfilAprovado = (scoreCredito >= 600) && bomHistorico;
 
+// O sistema decide se concede o crédito
+const emprestimoConcedido = parcelaCabeNoOrcamento && perfilAprovado
+
+// O sistema define a taxa de juros com base na aprovação
+const taxaJuros = emprestimoConcedido ? 5 : 0;
