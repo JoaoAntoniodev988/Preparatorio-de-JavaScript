@@ -1,0 +1,41 @@
+<style>
+ /* O visual padrão do card */
+#produto-card {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    margin: 10px;
+}
+
+/* O que muda quando ele ganha a classe esgotado */
+#produto-card.esgotado {
+    background-color: rgb(226, 224, 224);
+    color: rgb(71, 71, 71); /* para o texto não sumir no fundo claro */
+    border: 1px solid;
+}
+
+#btn-esgotar {
+   padding: 5px;
+   border-radius: 10px;
+   border: 2px solid;
+   border-color: gray;
+   margin-left: 45px;
+   font-size: small;
+}
+</style>
+
+<div id="produto-card"> Ténis Nike </div>
+<button id="btn-esgotar">Marcar como Esgotado</button>
+
+<script>
+    // 1. Pegamos nos componentes
+    const card = document.getElementById("produto-card");
+    const botao = document.getElementById("btn-esgotar");
+
+    // 2. Ligamos o circuito
+    botao.addEventListener("click", () => {
+        // 3. A ordem que executa ao clicar
+        card.classList.add("esgotado");
+    });
+</script>
