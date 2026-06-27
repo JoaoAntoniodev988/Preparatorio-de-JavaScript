@@ -5,4 +5,11 @@ let acertou = false;
 while (acertou === false) {
     tentativaDoJogador += 1;
     console.log("O jogador tentou o número: " + tentativaDoJogador);
+
+   if (tentativaDoJogador === 7) {
+    console.log("Parabéns! Descobriu o número secreto!");
+    !acertou
+   } 
 }
+
+console.log("Fim do jogo");
