@@ -8,7 +8,7 @@ while (acertou === false) {
 
    if (tentativaDoJogador === 7) {
     console.log("Parabéns! Descobriu o número secreto!");
-    !acertou
+    acertou = true
    } 
 }
 
