@@ -1,0 +1,2 @@
+let bateriaTelemovel = 100;
+
