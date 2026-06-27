@@ -1,31 +1,24 @@
-const carrinhoItens = 0;
-const cupomDesconto = "PROMO10"
-let valortotal = 250;
+const categoriaCarro = "Eco";
+const estaChover = false;
+let precoBase = 0;
 
-// 1. validação do carrinho:
-if (carrinhoItens) {
-    console.log("Carrinho válido! Processando cupão...");
-}
-// 1. Validação do carrinho:
-if (carrinhoItens) {
-    console.log("Carrinho válido! Processando cupão... 🛒");
-    
-    // 2. Aplicação do cupão:
-    switch (cupomDesconto) {
-        case "PROMO10":
-            valorTotal = valorTotal - 10;
-            console.log("Cupão PROMO10 aplicado! 10€ de desconto.");
-            break;
-        case "FRETEGRATIS":
-            console.log("Cupão FRETEGRATIS aplicado! Portes oferecidos.");
-            break;
-        default:
-            console.log("Nenhum cupão válido inserido.");
-    }
-    
-    console.log("Total a pagar: " + valorTotal + "€");
-} else {
-    console.log("Erro: Não pode finalizar a compra com o carrinho vazio! ❌");
+// 1. Definição do preço base:
+switch (categoriaCarro) {
+    case "Eco":
+        precoBase = 5;
+        break;
+    case "Normal":
+        precoBase = 8;
+        break;
+    case "Premium":
+        precoBase = 15;
+        break;
+    default:
+        precoBase = 7;
 }
 
+// 2. Curto-circuito da Chuva:
+const multiplicadorChuva = estaChover && 1.5 || 1;
+const precoFinal = precoBase * multiplicadorChuva;
 
+console.log(`Viagem ${categoriaCarro} confirmada. Preço Final: ${precoFinal} "€ 🚗`)
