@@ -186,3 +186,24 @@ document.querySelector('.filter-container').addEventListener('click', function(e
         init();
     }
 });
+
+// 10. Controle do Modo Escuro (Dark Mode) permanente
+const themeToggleBtn = document.querySelector('#theme-toggle');
+
+// Verifica se o usuário já tinha deixado o modo escuro ativado antes
+if (localStorage.getItem('dark-mode') === 'true') {
+    document.body.classList.add('dark');
+    themeToggleBtn.textContent = '☀️'; // Muda o ícone para sol se estiver escuro
+}
+
+themeToggleBtn.addEventListener('click', function() {
+    // Liga ou desliga a classe .dark no body
+    document.body.classList.toggle('dark');
+    
+    // Verifica se ficou escuro ou claro para salvar a preferência
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('dark-mode', isDark);
+    
+    // Altera o emoji do botão dinamicamente
+    themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+});
