@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="meu-formulario">
+    <input type="text" id="campo-nome" placeholder="Teu nome...">
+    <button type="submit">Enviar</button>
+</form>
+<p id="mensagem"></p>
+
+<script>
+    const form = document.getElementById("meu-formulario");
+    const botao = document.querySelector("button")
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("Formulálrio travado e enviado com sucesso vis JS!");
+    });
+
+    botao.addEventListener("mouseenter", () => {
+        botao.style.backgroundColor ="blue";
+    });
+
+    botao.addEventListener("mouseleave", () => {
+        botao.style.backgroundColor = "gray";
+    })
+</script>
+</body>
+</html>

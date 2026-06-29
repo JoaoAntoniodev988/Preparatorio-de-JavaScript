@@ -11,5 +11,14 @@
     <button>2</button>
     <button>3</button>
 </div>
+
+    <script>
+        const tecla = document.getElementById("teclado")
+        tecla.addEventListener("click", (e) => { 
+            if (e.target.tagName === "BUTTON") {
+                console.log("Tecla pressionada: " + e.target.textContent)
+            }  
+        })
+    </script>
 </body>
 </html>
