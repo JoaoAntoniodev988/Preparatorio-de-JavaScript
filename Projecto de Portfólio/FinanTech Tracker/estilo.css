@@ -25,6 +25,10 @@ body.dark {
     --texto-secundario: #b3b3b3;
 }
 
+body.dark th, body.dark td {
+    border-bottom: 1px solid #333; /* Uma linha divisória bem mais suave para o modo escuro */
+}
+
 body {
     background-color: var(--fundo-pagina);
     color: var(--texto-principal);
@@ -34,16 +38,18 @@ body {
 
 /* LAYOUT GERAL */
 header {
+    position: sticky;
+    top: 0;
     display: flex;
-    
-    text-align: center;
-    padding: 1.5rem 0.5rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px 25px;
     background-color: var(--destaque);
     color: #ffffff; /* Texto do cabeçalho sempre branco */
 }
 
 header h1 {
-    font-size: 10pt;
+    font-size: 12pt;
 }
 
 main {
@@ -63,6 +69,11 @@ section h2 {
     gap: 1.5rem;
     margin-bottom: 3rem;
 }
+#balance-section h2 {
+    font-size: small;
+}
+
+
 
 @media (min-width: 600px) {
     #balance-section {
@@ -87,19 +98,19 @@ section h2 {
 }
 
 .entrada p {
-    font-size: 1.5rem;
+    font-size: small;
     font-weight: bold;
     color: var(--entrada);
 }
 
 .saida p {
-    font-size: 1.5rem;
+    font-size: small;
     font-weight: bold;
     color: var(--saida);
 }
 
 .saldototal p {
-    font-size: 1.5rem;
+    font-size: small;
     font-weight: bold;
     color: var(--entrada); /* Saldo positivo fica verde */
 }
@@ -112,12 +123,13 @@ section h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 3rem;
     transition: background-color 0.3s;
+    font-size: small;
 }
 
 #form-section h2 {
     margin-bottom: 1.2rem;
     color: var(--texto-principal);
-    font-size: 1.3rem;
+    font-size: small;
 }
 
 .input-group {
@@ -127,7 +139,7 @@ section h2 {
 }
 
 .input-group label {
-    font-size: 0.9rem;
+   font-size: small;
     color: var(--texto-principal);
     margin-bottom: 0.4rem;
     font-weight: 500;
@@ -165,7 +177,7 @@ section h2 {
     color: white;
     border: none;
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: small;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s;
@@ -183,7 +195,7 @@ section h2 {
 #history-section h2 {
     margin-bottom: 1.5rem;
     color: var(--texto-principal);
-    font-size: 1.3rem;
+    font-size: small;
 }
 
 table {
@@ -204,7 +216,7 @@ th, td {
 th {
     color: var(--texto-secundario);
     font-weight: 600;
-    font-size: 0.7rem;
+    font-size: small;
 }
 
 td {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinanTech Tracker</title>
+    <title>Controle Financeiro inteligente</title>
     <link rel="stylesheet" href="estilo.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <h1>Seu controle financeiro <span>Inteligente</span></h1>
+        <h1>Controle Financeiro<br> <span>Inteligente</span></h1>
         <button id="theme-toggle" style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">🌙</button>
     </header>
 
@@ -85,11 +85,20 @@
                 </tbody>
             </table>
         </section>
+
+        <section id="chart-section" style="background: var(--fundo-cartao); padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 10px; transition: background-color 0.3s;">
+            <h2 style="margin-bottom: 1rem; font-size:small;">Distribuição de Gastos vs Ganhos</h2>
+
+            <div style="max-width: 200px; margin: 0 auto;">
+                <canvas id="financeChart"></canvas>
+            </div>
+        </section>
     </main> <!-- Fechamento do conteúdo principal -->
 
     <footer> <p> &copy 2026 -Todos os Direitos Reservados</p>
     <p><a href="">Autor: Js.dev988</a></p></footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

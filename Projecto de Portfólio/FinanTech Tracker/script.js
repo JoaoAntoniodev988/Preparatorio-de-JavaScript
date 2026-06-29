@@ -1,3 +1,5 @@
+let financeChartInstance = null;
+
 // 1. Selecionando os elementos que vamos precisar manipular
 const form = document.querySelector("#transaction-form");
 const inputdescription = document.querySelector("#description");
@@ -54,8 +56,45 @@ function updateBalanceValues() {
     const total = transactionAmounts.reduce((accumulator, value) => accumulator + value, 0);
 
     incomeDiplay.textContent = income.toLocaleString('pt-AO', { style: 'currency', currency: 'AOA' });
+
     expenseDisplay.textContent = expense.toLocaleString('pt-AO', { style: 'currency', currency: 'AOA' });
+
     totalDisplay.textContent = total.toLocaleString('pt-AO', { style: 'currency', currency: 'AOA' });
+
+    // 🌟 ATUALIZAÇÃO DO GRÁFICO DENTRO DE updateBalanceValues()
+    const ctx = document.querySelector('#financeChart').getContext('2d');
+    
+    // Se o gráfico já existir, destrói-o para criar um novo com os dados atualizados
+    if (financeChartInstance) {
+        financeChartInstance.destroy();
+    }
+
+    // Pega a cor do texto atual para que a legenda do gráfico mude no Dark Mode
+    const corTextoAtual = getComputedStyle(document.body).getPropertyValue('--texto-principal').trim();
+
+    // Cria o gráfico de rosca (doughnut)
+    financeChartInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Entradas', 'Saídas'],
+            datasets: [{
+                data: [income, Math.abs(expense)], // Usamos Math.abs para converter as saídas em positivo no gráfico
+                backgroundColor: ['#2ecc71', '#e74c3c'], // Verde para entradas, Vermelho para saídas
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: corTextoAtual // Faz a legenda ficar branca no Dark Mode e escura no Light Mode
+                    }
+                }
+            }
+        }
+    });
 }
 
 // Função que inicializa o app de forma coordenada
@@ -206,4 +245,7 @@ themeToggleBtn.addEventListener('click', function() {
     
     // Altera o emoji do botão dinamicamente
     themeToggleBtn.textContent = isDark ? '☀️' : '🌙';
+
+    // 🌟 AQUI! Adicione esta linha no final do clique para redesenhar o gráfico com as novas cores de texto!
+    updateBalanceValues(); 
 });
