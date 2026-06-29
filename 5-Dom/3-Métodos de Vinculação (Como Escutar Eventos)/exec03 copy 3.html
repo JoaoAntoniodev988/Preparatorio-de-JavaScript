@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+.modo-escuro {
+    background-color: black;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div id="ecra">Olá, Mundo!</div>
+    <button id="btn-modo">Alternar Modo Escuro</button>
+
+    <script>
+        const meuEcra = document.getElementById("ecra")
+
+        const meuBotao = document.getElementById("btn-modo")
+
+        meuBotao.addEventListener("click", () => {
+            meuEcra.classList.toggle("modo-escuro")
+        })
+    </script>
+
+
+</body>
+</html>
+
+

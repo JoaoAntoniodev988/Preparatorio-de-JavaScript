@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>muda o texto de um título.</title>
+</head>
+<body>
+    <h1 id="status-jogo">Jogo Pausado</h1>
+    <button id="btn-jogar">Começar Jogo</button>
+
+    <script>
+        const titulo = document.getElementById("status-jogo")
+        const botaoIniciar = document.getElementById("btn-jogar")
+
+        botaoIniciar.addEventListener("click", () => {
+            titulo.textContent = "O Jogo começou!"
+            titulo.style.color = "green"
+        })
+    </script>
+</body>
+</html>
+
+

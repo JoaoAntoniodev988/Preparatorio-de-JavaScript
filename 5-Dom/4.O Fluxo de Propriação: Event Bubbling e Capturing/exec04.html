@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<div id="cartao-produto">
+    <h2>Ténis Incrível</h2> 
+    
+    <button id="btn-carrinho">🛒 Adicionar</button>
+</div>
+<script>
+const botao = document.getElementById("btn-carrinho");
+
+// Repara que pomos um "e" dentro dos parênteses da função. 
+// Esse "e" guarda as informações do evento de clique.
+botao.addEventListener("click", (e) => {
+    
+    e.stopPropagation(); // 🛑 PAROU! A bolha morre aqui.
+    
+    console.log("Adicionado ao carrinho com sucesso!");
+});
+</script>
+</body>
+</html>
