@@ -22,7 +22,7 @@ body {
  /* LAYOUT GERAL */
 header {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1.5rem 0.5rem;
     background-color: var(--destaque);
     color: var(--fundo-card);
 }
@@ -140,6 +140,52 @@ section h2 {
     background-color: var(--fundo-card);
 }
 
-in
+.input-group small {
+    color: #777;
+    margin-top: 0.5rem; 
+}
 
+/* O Botão de Enviar */
+#transaction-form button {
+    width: 100%;
+    padding: 0.3rem;
+    background-color: var(--destaque);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: backgound 0.2s;
+}
 
+#transaction-form button:hover {
+    background-color: #005fd1; /* Escurece um pouco no hover */
+}
+
+#history-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--texto);
+    font-size: 1.3rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove espaços duplos nas bordas */
+    text-align: left;
+}
+
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    color: #666;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+td {
+    color: var(--texto)
+}
