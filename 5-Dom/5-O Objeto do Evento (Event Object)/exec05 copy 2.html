@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="lista-compras">
+    <li>Maçãs <button class="btn-remover">❌</button></li>
+    <li>Leite <button class="btn-remover">❌</button></li>
+</ul>
+
+    <script>
+        const botoesRemover = document.querySelectorAll(".btn-remover")
+
+        for(const botao of botoesRemover) {
+            botao.addEventListener("click", (e) => {
+                e.target.parentElement.remove()
+                
+            })
+        }
+    </script>
+</body>
+</html>

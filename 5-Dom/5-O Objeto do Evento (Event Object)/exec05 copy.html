@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="categorias">
+    <button class="btn-categoria">Moda</button>
+    <button class="btn-categoria">Tecnologia</button>
+    <button class="btn-categoria">Desporto</button>
+</div>
+
+<script>
+    const botoes = document.querySelectorAll(".btn-categoria")
+    for(const botao of botoes) {
+        botao.addEventListener("click", (e) => {
+            e.target.style.backgroundColor = "blue"
+            e.target.style.color = "white";
+
+            console.log("Categoria selecionada: " + e.target.textContent);
+        })
+    }
+</script>
+</body>
+</html>
