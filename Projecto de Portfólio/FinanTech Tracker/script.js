@@ -3,6 +3,7 @@ const form = document.querySelector("#transaction-form");
 const inputdescription = document.querySelector("#description");
 const inputAmount = document.querySelector("#amount");
 const transactionContainer = document.querySelector("#transaction-container");
+let currentFilter = 'all'; // Pode ser 'all', 'incomes' ou 'expenses'
 
 // Selecionando os cartões de exibição
 const incomeDiplay = document.querySelector("#income-display");
@@ -60,9 +61,21 @@ function updateBalanceValues() {
 // Função que inicializa o app de forma coordenada
 function init() {
     transactionContainer.innerHTML = ""; 
-    transantions.forEach(addTransactionIntoDom); 
+    
+    // 🌟 FILTRAGEM DINÂMICA ANTES DE DESENHAR NA TELA
+    let filteredTransactions = transantions;
+    
+    if (currentFilter === 'incomes') {
+        filteredTransactions = transantions.filter(t => t.amount > 0);
+    } else if (currentFilter === 'expenses') {
+        filteredTransactions = transantions.filter(t => t.amount < 0);
+    }
+    
+    // Desenha apenas as transações que passaram pelo filtro selecionado
+    filteredTransactions.forEach(addTransactionIntoDom); 
+    
     updateBalanceValues(); 
-    updateLocalStorage(); // Salva no banco local sempre que a tela atualizar
+    updateLocalStorage(); 
 }
 
 // Executa o início do app
@@ -141,4 +154,35 @@ inputAmount.addEventListener('input', function(event) {
     }
 
     event.target.value = isNegative ? '-' + value : value;
+});
+
+// 9. Controle dos botões de Filtro do Histórico
+document.querySelector('.filter-container').addEventListener('click', function(event) {
+    const clickedBtn = event.target;
+    
+    // Garante que o usuário clicou em um botão e não no espaço entre eles
+    if (clickedBtn.classList.contains('filter-btn')) {
+        
+        // Remove a cor de ativo de todos os botões de filtro
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.style.background = 'white';
+            btn.style.color = '#333';
+            btn.style.borderColor = '#ccc';
+            btn.style.fontWeight = 'normal';
+        });
+
+        // Aplica a cor azul de ativo apenas no botão que foi clicado
+        clickedBtn.style.background = 'var(--destaque)';
+        clickedBtn.style.color = 'white';
+        clickedBtn.style.borderColor = 'var(--destaque)';
+        clickedBtn.style.fontWeight = 'bold';
+
+        // Altera o filtro atual dependendo do botão clicado
+        if (clickedBtn.id === 'filter-all') currentFilter = 'all';
+        if (clickedBtn.id === 'filter-incomes') currentFilter = 'incomes';
+        if (clickedBtn.id === 'filter-expenses') currentFilter = 'expenses';
+
+        // Executa o init para atualizar apenas as linhas da tabela
+        init();
+    }
 });

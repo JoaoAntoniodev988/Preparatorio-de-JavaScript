@@ -23,13 +23,13 @@
 
             <!-- Cartão: Entrada -->
             <div class="entrada">
-                <h3>Ativos</h3>
+                <h3>Entrada</h3>
                 <p id="income-display">0,00 AOA</p>
             </div>
 
              <!-- Cartão: Saídas -->
             <div class="saida">
-                <h3>Passivos</h3>
+                <h3>Saída</h3>
                 <p id="expense-display">0,00 AOA</p>
             </div>
 
@@ -63,6 +63,12 @@
         <!-- Seção do Histórico -->
         <section id="history-section">
             <h2>Histórico de Transações</h2>
+
+            <div class="filter-container" style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem;">
+                <button id="filter-all" class="filter-btn active" style="padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; border: 1px solid var(--destaque); background: var(--destaque); color: white; font-weight: bold;">Todas</button>
+                <button id="filter-incomes" class="filter-btn" style="padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; background: white; color: #333;">Entradas</button>
+                <button id="filter-expenses" class="filter-btn" style="padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; border: 1px solid #ccc; background: white; color: #333;">Saídas</button>
+            </div>
 
             <table id="data-table">
                 <thead>
