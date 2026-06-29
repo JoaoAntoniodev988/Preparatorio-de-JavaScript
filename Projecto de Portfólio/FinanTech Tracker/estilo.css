@@ -134,6 +134,11 @@ section h2 {
     transition: border-color o.2s;
     border: none;
     background-color: var(--fundo-principal);
+
+    /* Garante que os inputs não estourem o tamanho do formulário */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .input-group input:focus {
@@ -173,19 +178,28 @@ table {
     width: 100%;
     border-collapse: collapse; /* Remove espaços duplos nas bordas */
     text-align: left;
+    min-width: 200px; /* Garante um tamanho mínimo confortável */
 }
 
 th, td {
-    padding: 1rem;
     border-bottom: 1px solid #eee;
+     white-space: nowrap; /* Mantém na mesma linha de forma organizada */
+    padding: 0.8rem;
 }
 
 th {
     color: #666;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
 }
 
 td {
-    color: var(--texto)
+    color: var(--texto);
+    font-size: small;
 }
+
+/* Torna a tabela rolável apenas dentro do container dela se a tela for minúscula */
+#history-section {
+    overflow-x: auto;
+}
+
