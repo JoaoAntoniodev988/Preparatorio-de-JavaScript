@@ -23,19 +23,19 @@
 
             <!-- Cartão: Entrada -->
             <div class="entrada">
-                <h3>Entradas</h3>
+                <h3>Ativos</h3>
                 <p id="income-display">0,00 AOA</p>
             </div>
 
              <!-- Cartão: Saídas -->
             <div class="saida">
-                <h3>Saídas</h3>
+                <h3>Passivos</h3>
                 <p id="expense-display">0,00 AOA</p>
             </div>
 
              <!-- Cartão: Total -->
             <div class="saldototal">
-                <h3>Saldo Total</h3>
+                <h3>Saldo Atual</h3>
                 <p id="total-display">0,0 AOA</p>
             </div>
         </section>
@@ -50,9 +50,9 @@
                     <input type="text" id="description" placeholder="Ex: Salário, Supermercado" required>
                 </div>
 
-                <div class="input-group">
+               <div class="input-group">
                     <label for="amount">Valor</label>
-                    <input type="number" id="amount" step="0.01" placeholder="0,00" required>
+                    <input type="text" id="amount" placeholder="0,00" required>
                     <small>Use o sinal - (menos) para despesas/gastos.</small>
                 </div>
 
@@ -62,7 +62,7 @@
 
         <!-- Seção do Histórico -->
         <section id="history-section">
-            <h2>Histótico de Transações</h2>
+            <h2>Histórico de Transações</h2>
 
             <table id="data-table">
                 <thead>
