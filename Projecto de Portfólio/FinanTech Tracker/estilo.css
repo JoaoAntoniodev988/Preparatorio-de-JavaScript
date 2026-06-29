@@ -9,8 +9,137 @@
 :root {
     --fundo-principal: #f5f5f5;
     --texto: #222222;
-    --texto-inverso: #ffffff;
-    --destaque: #0077ff;
-    --destaque-inverso: #66bbff;
+    --destaque: #0077ff;        /* Azul do cabeçalho */
     --fundo-card: #ffffff;
+    --entrada: #05c224;         /* Verde para ganhos */
+    --saida: #c40d0d;           /* Vermelho para gastos */
 }
+
+body {
+    background-color: var(--fundo-principal);
+    font-family: "inter";
+}
+ /* LAYOUT GERAL */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: var(--destaque);
+    color: var(--fundo-card);
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+section h2 {
+    text-align: center;
+}
+
+#balance-section {
+    display: grid;
+    grid-template-columns: 1fr; /* Padrão para celular: 1 coluna */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Quando a tela for maior que 600px, muda para 3 colunas iguais */
+@media (min-width: 600px) {
+    #balance-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.entrada {
+    background-color: var(--fundo-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra leve de Fintech */
+}
+
+.saida {
+     background-color: var(--fundo-card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra leve de Fintech */
+}
+
+
+.entrada h3 {
+    font-size: small;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.saida h3 {
+    font-size: small;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+
+.entrada p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--entrada);
+}
+
+.saida p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--saida);
+}
+
+.saldototal p {
+    color: var(--entrada);
+}
+
+/* SECÇÂO DO FORMULÁRIO */
+
+#form-section {
+    background-color: var(--fundo-card);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 3rem;
+}
+
+#form-section h2 {
+    margin-bottom: 1.2rem;
+    color: var(--texto);
+    font-size: 1.3rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column; /* Deixa a Label em cima do Input */
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: small;
+    outline: none;
+    transition: border-color o.2s;
+    border: none;
+    background-color: var(--fundo-principal);
+}
+
+.input-group input:focus {
+    background-color: var(--fundo-card);
+}
+
+in
+
+
